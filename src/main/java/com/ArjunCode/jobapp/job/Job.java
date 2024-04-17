@@ -1,13 +1,31 @@
 package com.ArjunCode.jobapp.job;
 
+import com.ArjunCode.jobapp.company.Company;
+import jakarta.persistence.*;
+
+@Entity
+//@Table(name = "job_table")
 public class Job {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
     private String minSalary;
     private String maxSalary;
     private String location;
+
+    @ManyToOne
+    private Company company;
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
     public Long getId() {
         return id;
@@ -64,5 +82,8 @@ public class Job {
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
         this.location = location;
+    }
+
+    public Job() {
     }
 }
