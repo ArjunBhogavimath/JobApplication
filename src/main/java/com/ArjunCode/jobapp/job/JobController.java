@@ -1,5 +1,6 @@
 package com.ArjunCode.jobapp.job;
 
+import com.ArjunCode.jobapp.company.Company;
 import com.ArjunCode.jobapp.job.service.JobService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

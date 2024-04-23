@@ -7,7 +7,9 @@ public interface CompanyService {
 
     boolean updateCompany(Company updatedCompany, Long id);
     Company getCompanyById();
-    String deleteCompany();
+    boolean deleteCompany(Long id);
 
     void createCompany(Company company);
+
+    Company getCompany(Long id);
 }

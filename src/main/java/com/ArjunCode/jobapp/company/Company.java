@@ -1,6 +1,7 @@
 package com.ArjunCode.jobapp.company;
 
 import com.ArjunCode.jobapp.job.Job;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class Company {
     private String description;
 
     //need to map job to the company. the company has many jobs
+    @JsonIgnore
     @OneToMany(mappedBy = "company") // 1 company many jobs
     private List<Job> jobs;
 
