@@ -1,6 +1,7 @@
 package com.ArjunCode.jobapp.company;
 
 import com.ArjunCode.jobapp.job.Job;
+import com.ArjunCode.jobapp.review.Review;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -20,6 +21,18 @@ public class Company {
     @OneToMany(mappedBy = "company") // 1 company many jobs
     private List<Job> jobs;
 
+
+    @OneToMany(mappedBy = "company") // 1 company many jobs
+    private List<Review> reviews;
+
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 
     //for JPA
     public Company() {
